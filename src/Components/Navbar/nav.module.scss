@@ -1,0 +1,59 @@
+
+@mixin btn-content{
+    padding: 0.7rem 1.8rem;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between ;
+    padding: 0rem 5rem; 
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+    width: 100%;
+    position: relative;
+
+    &__home{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    &__item{
+        margin-left: 2rem;
+    }
+
+    &__logo{
+        position: absolute;
+        top: -40%;
+        left:2rem;
+        height: 10rem;
+        width: 19rem;
+        cursor: pointer;
+    }
+
+    &_btn{
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding:0.5rem;
+        cursor: pointer;
+
+        &__normal{
+            background-color: #E50914;
+            color: #fff;
+            @include btn-content();
+        }
+
+        &__outlined{
+            border: 0.11rem solid #fff;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include btn-content();
+            padding: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+*,*::after,*::before{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+// phone = 600px  = 600/16 = 37.5em
+// tablet = 900px  = 900/16 = 56.25em
+// desktop = 1200px = 1200/16 = 75em
+// large-desktop = 1600px = 1500/16 = 93.75em
+
+@mixin respond($breakpoint) {
+
+  @if $breakpoint == large_desktop{      //for screen size > 1600px
+    @media screen and (min-width:93.75em){ @content};
+  }
+
+  @if $breakpoint == desktop{            //for screen size < 1201px
+    @media screen and (max-width:75em){ @content};
+  }
+
+  @if $breakpoint == tab{               //for screen size < 901px
+    @media screen and (max-width:56.25em){ @content};
+  }
+
+  @if $breakpoint == phone{             //for screen size < 601px
+    @media screen and (max-width:37.5em){ @content};  
+  }
+
+  @if $breakpoint == smallPhone{             //for screen size < 500px
+    @media screen and (max-width:31.5em){ @content};  
+  }
+}
+
+
+/* 1rem = 10 px */
+html{
+	box-sizing: border-box;
+  font-size: 62.5%;
+  @include respond(large_desktop){
+    font-size: 75%;  //1rem = 12/16 = 0.75
+  }
+
+  @include respond(desktop){
+    font-size: 59.37%;  //1rem = 9.5/16 = 0.5937
+  }
+
+  @include respond(tab){
+    font-size: 56.25%;     //1rem = 9px = 9/16 = 0.5625
+  }
+
+  @include respond(phone){  //1 rem =  8px = 8/16 = 0.50 
+    font-size: 50%;
+  }
+
+  @include respond(smallPhone){  //1 rem =  6.5px = 6.5/16 = 0.40 
+    font-size: 42%;
+  }
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon{
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  fill: #fff;
+  margin: 0 0.35rem;
+
+  &__down{
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-top: -0.5rem;
+  }
+
+  &__globe{
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  
+  &__arrowRight{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-top: 0.3rem;
+  }
+}
