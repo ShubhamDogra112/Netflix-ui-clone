@@ -1,0 +1,43 @@
+.input{
+        border: none;
+        left: 0;
+        top: 0;
+        width: 70%;
+        outline: none;
+        height: 5rem;
+        padding: 1rem;
+        border-radius: 0.15rem;
+        background-color: #fff;
+        font-size: 1.2rem;
+
+        &::placeholder{
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 930px) {
+            &{
+                width: 100%;
+            } 
+        }
+     }
+
+     .btn{
+         border: none;
+         border-radius: 0.15rem;
+         outline: none;
+         width: 30%;
+         background-color: #E50914;
+         color: #fff;
+         height: 5rem;
+         font-size: 2rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         cursor: pointer;
+
+         @media screen and (max-width: 930px) {
+            &{
+                margin-top: 1.5rem;
+            } 
+        }
+     }

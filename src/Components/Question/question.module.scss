@@ -1,0 +1,31 @@
+.question{
+    width: 55%;
+    background-color: #222222;
+    margin: 0.5rem 0;
+
+    &__header{
+        font-size: 2rem;
+        padding: 2rem;
+        font-weight: 500;
+        border-bottom: 3px solid #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    &__answer{
+        margin-top: 1.5rem;
+        font-size: 2rem;
+        overflow: hidden;
+        font-weight: 500;
+        padding: 2rem;
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+.answer{
+    overflow: hidden;
+    transition: max-height 0.25s cubic-bezier(.5,0,.1,1);
+}
